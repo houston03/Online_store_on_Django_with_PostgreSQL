@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block modal_cart %}
+{% include 'includes/cart_button.html' %}
+{% endblock %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'deps/css/my_footer_css.css'%}">
+{% endblock %}
+
+{% block content %}
+<h1 class="mt-5 pt-5"><b>Про нас</b></h1>
+<h2>Наш интернет магазин. Всего лишь иллюзия.</h2>
+{% endblock %}
+
+{% block footer %}
+<footer class="py-4 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">ThetlMag &copy; Python/Django/PostgreSQL</p>
+        </div>
+    </footer>
+{% endblock %}
