@@ -1,4 +1,4 @@
-Интернет магазин с PostgreSQL и такими функциями как: 
+Интернет магазин Django с PostgreSQL и такими функциями как: 
 
 -Регистрация пользователя;
 ![image](https://github.com/user-attachments/assets/d7e94e74-6d6f-4f0a-bc04-8688a002f00e)
