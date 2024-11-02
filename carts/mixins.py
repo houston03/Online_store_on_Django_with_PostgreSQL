@@ -24,7 +24,7 @@ class CartMixin:
         user_cart = get_user_carts(request)
         context = {"carts": user_cart}
 
-        # if referer page is create_order add key orders: True to context
+   
         referer = request.META.get('HTTP_REFERER')
         if reverse('orders:create_order') in referer:
             context["order"] = True
