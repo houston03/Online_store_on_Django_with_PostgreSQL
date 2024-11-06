@@ -19,8 +19,6 @@ class UserLoginView(LoginView):
     template_name = 'users/login.html'
     form_class = UserLoginForm
 
-    # success_url = reverse_lazy('main:index')
-
     def get_success_url(self):
         redirect_page = self.request.POST.get('next', None)
         if redirect_page and redirect_page != reverse('user:logout'):
@@ -29,9 +27,7 @@ class UserLoginView(LoginView):
 
     def form_valid(self, form):
         session_key = self.request.session.session_key
-
         user = form.get_user()
-
         if user:
             auth.login(self.request, user)
             if session_key:
@@ -41,9 +37,7 @@ class UserLoginView(LoginView):
                     forgot_carts.delete()
                 # add new authorized user carts from anonimous session
                 Cart.objects.filter(session_key=session_key).update(user=user)
-
                 messages.success(self.request, f"{user.username}, Вы вошли в аккаунт")
-
                 return HttpResponseRedirect(self.get_success_url())
 
     def get_context_data(self, **kwargs):
